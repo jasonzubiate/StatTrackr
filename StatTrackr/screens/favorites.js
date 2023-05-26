@@ -9,11 +9,19 @@ export default function Favorites() {
       Position: "SF",
       stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
     },
+    "Jamal Murray": {
+      Position: "SF",
+      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
+    },
     "Steph Curry": {
       Position: "SF",
       stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
     },
     "Jimmy Butler": {
+      Position: "SF",
+      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
+    },
+    "Nikola Jokic": {
       Position: "SF",
       stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
     },
