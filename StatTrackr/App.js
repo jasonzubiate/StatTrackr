@@ -1,47 +1,26 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import Header from "./components/Header";
-import LargeCard from "./components/LargeCard";
 import Footer from "./components/Footer";
+import Home from "./screens/home";
+import { useFonts } from "expo-font";
+import { useState } from "react";
 
 export default function App() {
-  // Dummy data for now
-  const data = {
-    "Lebron James": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
-    },
-    "Steph Curry": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
-    },
-    "Jimmy Butler": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
-    },
-  };
+  const [LoadedFonts] = useFonts({
+    "sora-thin": require("./assets/fonts/Sora-Thin.ttf"),
+    "sora-regular": require("./assets/fonts/Sora-Regular.ttf"),
+    "sora-semibold": require("./assets/fonts/Sora-SemiBold.ttf"),
+    "sora-bold": require("./assets/fonts/Sora-Bold.ttf"),
+  });
 
-  return (
-    <>
-      <Header />
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <LargeCard title={"Favorite Players"} data={data} />
-        <LargeCard title={"Suggested Players"} data={data} />
-      </View>
-      <Footer />
-    </>
-  );
+  if (LoadedFonts) {
+    return (
+      <>
+        <Header />
+        <Home />
+        <Footer />
+      </>
+    );
+  } else {
+    return null;
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: "#252525",
-    gap: 16,
-  },
-  text: {
-    color: "white",
-  },
-});
