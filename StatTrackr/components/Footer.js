@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
   link: {
     fontSize: 16,
     color: "#FFFFFF",
+    fontFamily: "sora-regular"
   },
 });
