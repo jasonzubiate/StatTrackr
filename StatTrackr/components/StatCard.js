@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+
 export default function StatCard({ item }) {
-  console.log(item)
+  console.log(item.name)
   return (
     <TouchableOpacity style={styles.card}>
       <View style={styles.img}>{/* player img */}</View>
       <View style={styles.stats}>
         <View style={styles.header}>
-          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.name}>{item}</Text>
           <Text style={styles.position}>{item.position}</Text>
         </View>
         <View style={styles.labels}>

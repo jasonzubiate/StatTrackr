@@ -14,7 +14,10 @@ export default function App() {
 
   if (LoadedFonts) {
     return (
-      <HomeStack/>
+      <>
+        <HomeStack />
+        <Footer />
+      </>
       // <>
       //   <Header />
       //   <Home />

@@ -4,25 +4,59 @@ import LargeCard from "../components/LargeCard";
 
 export default function Home() {
   // Dummy data for now
-  const data = {
-    "Lebron James": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
+  const dataPlayers = [
+    {
+      class: "player",
+      name: "Lebron James",
+      position: "SF",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
     },
-    "Steph Curry": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
+    {
+      class: "player",
+      name: "Jamal Murray",
+      position: "SF",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
     },
-    "Jimmy Butler": {
-      Position: "SF",
-      stats: { Points: 32, Rebounds: 5, Assists: 5, Rating: 89 },
+    {
+      class: "player",
+      name: "Jayson Tatum",
+      position: "SF",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
     },
-  };
+    {
+      class: "player",
+      name: "Jaylem Brown",
+      position: "SF",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
+    },
+  ];
+  const dataTeams = [
+    {
+      class: "team",
+      name: "Los Angeles Lakers",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
+    },
+    {
+      class: "team",
+      name: "Philadelphia 76ers",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
+    },
+    {
+      class: "team",
+      name: "Boston Celtics",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
+    },
+    {
+      class: "team",
+      name: "Golden State Warriors",
+      stats: { SeasonRating: 87, PreviousRating: 89 },
+    },
+  ];
 
   return (
     <View style={globalStyles.container}>
       <LargeCard title={"Favorite Players"} data={data} />
-      <LargeCard title={"Suggested Players"} data={data} />
+      <LargeCard title={"Top Movers"} data={data} />
     </View>
   );
 }

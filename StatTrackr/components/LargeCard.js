@@ -7,7 +7,10 @@ export default function LargeCard({ title, data }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
-      <FlatList data={data} renderItem={(item) => <StatCard item={item} />} />
+      <FlatList
+        data={data}
+        renderItem={({ item }) => <StatCard item={item} />}
+      />
     </View>
   );
 }
@@ -15,7 +18,6 @@ export default function LargeCard({ title, data }) {
 const styles = StyleSheet.create({
   card: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "center",
     padding: 12,
     borderRadius: 10,
