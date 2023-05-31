@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { globalStyles } from "../styles/global";
 import LargeCard from "../components/LargeCard";
 
-export default function Home() {
+export default function Home({ navigation }) {
   // Dummy data for now
   const dataPlayers = [
     {
@@ -55,8 +55,8 @@ export default function Home() {
 
   return (
     <View style={globalStyles.container}>
-      <LargeCard title={"Favorite Players"} data={dataPlayers} />
-      <LargeCard title={"Top Movers"} data={dataTeams} />
+      <LargeCard title={"Top Movers"} data={dataPlayers} navigation={navigation}/>
+      <LargeCard title={"Top Movers"} data={dataTeams} navigation={navigation}/>
     </View>
   );
 }

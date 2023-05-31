@@ -1,22 +1,23 @@
 import { createStackNavigator } from "react-navigation-stack";
-import Home from "../screens/home";
+import Favorites from "../screens/favorites";
 import Overview from "../screens/overview";
 
+
 const screens = {
-  Home: {
-    screen: Home,
+  Favorites: {
+    screen: Favorites,
     navigationOptions: {
-      title: "StatTrackr",
+      title: "Favorites",
     },
   },
   Overview: {
     screen: Overview,
     navigationOptions: {
-      title: "Player Overview",
+      title: "Overview",
     },
   },
 };
-const HomeStack = createStackNavigator(screens, {
+const FavoritesStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerStyle: {
       backgroundColor: "#0D0E0B",
@@ -30,4 +31,4 @@ const HomeStack = createStackNavigator(screens, {
   },
 });
 
-export default HomeStack;
+export default FavoritesStack;

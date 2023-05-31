@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./screens/home";
 import { useFonts } from "expo-font";
-import HomeStack from "./routes/homeStack";
+import Navigator from "./routes/drawer";
 
 export default function App() {
   const [LoadedFonts] = useFonts({
@@ -16,14 +16,9 @@ export default function App() {
   if (LoadedFonts) {
     return (
       <>
-        <HomeStack />
+        <Navigator />
         <Footer />
       </>
-      // <>
-      //   <Header />
-      //   <Home />
-      //   <Footer />
-      // </>
     );
   } else {
     return null;
