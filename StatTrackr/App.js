@@ -1,8 +1,7 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./screens/home";
-import { useFonts } from "expo-font";
+import 'react-native-gesture-handler';
 import Navigator from "./routes/drawer";
+import Footer from "./components/Footer";
+import { useFonts } from "expo-font";
 
 export default function App() {
   const [LoadedFonts] = useFonts({
