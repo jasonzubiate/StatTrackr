@@ -1,25 +1,35 @@
-import 'react-native-gesture-handler';
-import Navigator from "./routes/drawer";
-import Footer from "./components/Footer";
+import HomeStack from "./routes/homeStack";
+import FavoritesStack from "./routes/favoritesStack";
+import NavigationBar from "./components/NavigationBar";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 import { useFonts } from "expo-font";
 
-export default function App() {
-  const [LoadedFonts] = useFonts({
-    "sora-thin": require("./assets/fonts/Sora-Thin.ttf"),
-    "sora-regular": require("./assets/fonts/Sora-Regular.ttf"),
-    "sora-medium": require("./assets/fonts/Sora-Medium.ttf"),
-    "sora-semibold": require("./assets/fonts/Sora-SemiBold.ttf"),
-    "sora-bold": require("./assets/fonts/Sora-Bold.ttf"),
-  });
+const TabNavigator = createBottomTabNavigator({
+	Home: { screen: HomeStack },
+	Favorites: { screen: FavoritesStack },
+});
 
-  if (LoadedFonts) {
-    return (
-      <>
-        <Navigator />
-        <Footer />
-      </>
-    );
-  } else {
-    return null;
-  }
+const AppContainer = createAppContainer(TabNavigator);
+
+export default function App() {
+	const [LoadedFonts] = useFonts({
+		"sora-thin": require("./assets/fonts/Sora-Thin.ttf"),
+		"sora-regular": require("./assets/fonts/Sora-Regular.ttf"),
+		"sora-medium": require("./assets/fonts/Sora-Medium.ttf"),
+		"sora-semibold": require("./assets/fonts/Sora-SemiBold.ttf"),
+		"sora-bold": require("./assets/fonts/Sora-Bold.ttf"),
+	});
+
+	if (LoadedFonts) {
+		return (
+			<>
+				<AppContainer />
+				<NavigationBar />
+			</>
+		);
+	} else {
+		return null;
+	}
 }
