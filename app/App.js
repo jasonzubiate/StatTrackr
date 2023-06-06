@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import HomeStack from "./routes/homeStack";
 import FavoritesStack from "./routes/favoritesStack";
+import NavigationBar from "./components/NavigationBar";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 
@@ -15,7 +16,8 @@ export default function App() {
 
 	return (
 		<NavigationContainer>
-			<FavoritesStack />
+			<HomeStack />
+			<NavigationBar />
 		</NavigationContainer>
 	);
 }

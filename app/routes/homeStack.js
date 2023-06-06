@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import Overview from "../screens/overview";
@@ -8,8 +7,12 @@ const Stack = createStackNavigator();
 export default function HomeStack() {
 	return (
 		<Stack.Navigator>
-			<Stack.Screen name="Home" component={Home} />
-			<Stack.Screen name="Overview" component={Overview} />
+			<Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
+			<Stack.Screen
+				name="Overview"
+				component={Overview}
+				options={{ title: "Overview" }}
+			/>
 		</Stack.Navigator>
 	);
 }

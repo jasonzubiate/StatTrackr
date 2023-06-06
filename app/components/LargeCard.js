@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import StatCard from "./StatCard";
 
 // This component is used to display all of Favorite Players, Suggested Players, Favorite Teams, etc.
 // Takes two properties, the title for the card and the data that will be displayed in the card.
-export default function LargeCard({ title, data, navigation }) {
+export default function LargeCard({ navigation, title, data }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>

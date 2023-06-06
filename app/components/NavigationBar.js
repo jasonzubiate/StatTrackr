@@ -1,17 +1,17 @@
 
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import HomeStack from '../routes/homeStack';
+import FavoritesStack from '../routes/favoritesStack';
 
-export default function NavigtionBar() {
+const Nav = createMaterialBottomTabNavigator();
+
+export default function NavigationBar() {
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-around', backgroundColor: 'lightgray', padding: 10 }}>
-      <Text>Nav</Text>
-      {/* <TouchableOpacity onPress={navigateToHome}>
-        <Text>Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={navigateToFavorites}>
-        <Text>Favorites</Text>
-      </TouchableOpacity> */}
-    </View>
+    <Nav.Navigator>
+			<Nav.Screen name="Home" component={HomeStack}/>
+			<Nav.Screen name="Favorites" component={FavoritesStack}/>
+		</Nav.Navigator>
   )
 }
 const styles = StyleSheet.create({
