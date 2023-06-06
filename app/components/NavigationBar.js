@@ -1,33 +1,53 @@
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeStack from "../routes/homeStack";
+import FavoritesStack from "../routes/favoritesStack";
+import { Ionicons } from "@expo/vector-icons";
 
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import HomeStack from '../routes/homeStack';
-import FavoritesStack from '../routes/favoritesStack';
-
-const Nav = createMaterialBottomTabNavigator();
+const Nav = createBottomTabNavigator();
 
 export default function NavigationBar() {
   return (
-    <Nav.Navigator>
-			<Nav.Screen name="Home" component={HomeStack}/>
-			<Nav.Screen name="Favorites" component={FavoritesStack}/>
-		</Nav.Navigator>
-  )
+    <Nav.Navigator
+      screenOptions={{
+        tabBarStyle: styles.nav,
+        tabBarActiveTintColor: "#FFA500",
+        tabBarInactiveTintColor: "white",
+        headerShown: false,
+      }}
+    >
+      <Nav.Screen
+        name="Home"
+        component={HomeStack}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "Home",
+        }}
+      />
+      <Nav.Screen
+        name="Favorites"
+        component={FavoritesStack}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="heart-outline" size={size} color={color} />
+          ),
+          tabBarLabel: "Favorites",
+        }}
+      />
+    </Nav.Navigator>
+  );
 }
 const styles = StyleSheet.create({
-	nav: {
-		flexDirection: "row",
-		alignItems: "center",
-		justifyContent: "space-between",
-		backgroundColor: "#0D0E0B",
-		paddingLeft: 48,
-		paddingRight: 48,
-		paddingBottom: 16,
-		height: 80,
-	},
-	link: {
-		fontSize: 16,
-		color: "#FFFFFF",
-		fontFamily: "sora-regular",
-	},
+  nav: {
+    backgroundColor: "#0D0E0B",
+    height: 85,
+    paddingTop: 5,
+  },
+  link: {
+    fontSize: 20,
+    color: "#FFFFFF",
+    fontFamily: "sora-regular",
+  },
 });
