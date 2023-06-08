@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     title: {
         color: "white",
         fontFamily: "sora-bold",
-        fontSize: 20,
+        fontSize: 16,
         letterSpacing: 1,
         
     },
