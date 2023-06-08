@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     teamImage: {
-        width: 100,
-        height: 100,
+        width: 50,
+        height: 50,
         resizeMode: "contain",
         marginRight: 8,
         marginLeft: 8,

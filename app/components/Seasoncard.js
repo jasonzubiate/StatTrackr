@@ -22,6 +22,10 @@ export default function Season() {
                     <Text style={styles.score}>8.3</Text>
                 </View>
                 <View style={styles.scoreItem}>
+                    <Text style={styles.abbreviation}>SPG</Text>
+                    <Text style={styles.score}>0.9</Text>
+                </View>
+                <View style={styles.scoreItem}>
                     <Text style={styles.abbreviation}>BPG</Text>
                     <Text style={styles.score}>0.6</Text>
                 </View>
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
 
     scoreItem: {
         alignItems: "center",
-        marginHorizontal: 20,
+        marginHorizontal: 15,
 
     },
 
@@ -74,9 +78,10 @@ const styles = StyleSheet.create({
         fontFamily: "sora-bold",
         fontSize: 12,
       },
-      score: {
+    score: {
         color: "white",
         fontFamily: "sora-regular",
         fontSize: 14,
-      },
+    },
+    
 })
