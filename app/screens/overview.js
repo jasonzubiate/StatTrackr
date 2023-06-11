@@ -10,7 +10,7 @@ import RecentGames from "../components/RecentGamesCard";
 import PlayerCard from "../components/PlayerCard";
 import OverviewBar from "../components/OverviewBar";
 
-export default function Overview({ route }) {
+export default function Overview({ route, navigation }) {
 	const { name, playerClass, stats } = route.params;
 
 	const item = {
@@ -28,7 +28,7 @@ export default function Overview({ route }) {
 			<Text style={globalStyles.p}>{playerClass}</Text>
 			<Text style={globalStyles.p}>{JSON.stringify(stats)}</Text> */}
 			<PlayerCard/>
-			<OverviewBar/>
+			<OverviewBar navigation={navigation}/>
 			<Season style={globalStyles.p}/>
 			<OverviewStats style={globalStyles.p}/>
 			<PreviousGame style={globalStyles.p}/>
