@@ -3,6 +3,8 @@ import { View, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { globalStyles } from "../styles/global";
 import LargeCard from "../components/LargeCard";
+import LargeCard_fav from "../components/LargeCard_fav";
+import LargeCard_fav2 from "../components/LargeCard_fav2";
 import favoriteteamsStack from "../routes/favoriteteamsStack";
 
 export default function Favorites() {
@@ -81,8 +83,8 @@ export default function Favorites() {
     title="Teams"
     onPress={() => navigation.navigate(favoriteteamsStack.Favorites)}
   />
-  <LargeCard title={"Favorite Players"} data={dataPlayers} />
-  <LargeCard title={"Suggested Players"} data={dataPlayers2} />
+  <LargeCard_fav title={"Favorite Players"} data={dataPlayers} />
+  <LargeCard_fav2 title={"Suggested Players"} data={dataPlayers2} />
 </View>
 
 		
