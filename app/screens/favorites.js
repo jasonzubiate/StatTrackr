@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View, Button, TouchableOpacity, Image, StyleSheet } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import { globalStyles } from "../styles/global";
 import LargeCard from "../components/LargeCard";
 import LargeCard_fav from "../components/LargeCard_fav";
 import LargeCard_fav2 from "../components/LargeCard_fav2";
 import favoriteteamsStack from "../routes/favoriteteamsStack";
+import favoriteteams from "./Favoriteteams";
 
 export default function Favorites() {
 	const navigation = useNavigation();
@@ -77,16 +79,36 @@ export default function Favorites() {
 
 
 	return (
-		
 		<View style={globalStyles.container}>
-  <Button
-    title="Teams"
-    onPress={() => navigation.navigate(favoriteteamsStack.Favorites)}
-  />
-  <LargeCard_fav title={"Favorite Players"} data={dataPlayers} />
-  <LargeCard_fav2 title={"Suggested Players"} data={dataPlayers2} />
-</View>
-
-		
-	);
-}
+		  <View style={styles.header}>
+			<TouchableOpacity
+			  onPress={() => {
+				navigation.navigate("favoriteteams", favoriteteams);
+			  }}
+			>
+			  <Image
+				source={require("../assets/img/nav_bar.png")}
+				style={styles.logo}
+			  />
+			</TouchableOpacity>
+			
+		  </View>
+		  <LargeCard_fav title={"Favorite Players"} data={dataPlayers} />
+		  <LargeCard_fav2 title={"Suggested Players"} data={dataPlayers2} />
+		</View>
+	  );
+	}
+	
+	const styles = StyleSheet.create({
+	  header: {
+		flexDirection: "row",
+		alignItems: "left",
+		paddingTop: 0,
+		paddingHorizontal: 0,
+		marginBottom: 0,
+	  },
+	  logo: {
+		width: 400,
+		height: 30,
+	  },
+	});

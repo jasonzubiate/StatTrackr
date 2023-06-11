@@ -5,8 +5,9 @@ import StatCard from "./StatCard";
 export default function LargeCard({ navigation, title, data }) {
   return (
     <View style={styles.card}>
+              <Text style={styles.previousGameStats}>Previous Game Stats</Text>
+
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.previousGameStats}>Previous Game Stats</Text>
       {data.map((item) => {
         return (
           <StatCard item={item} navigation={navigation} key={item.name} />

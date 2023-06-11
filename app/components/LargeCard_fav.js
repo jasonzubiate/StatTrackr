@@ -5,6 +5,8 @@ import StatCard from "./StatCard";
 export default function LargeCard_fav({ navigation, title, data }) {
   return (
     <View style={styles.card}>
+              <Text style={styles.previousGameStats}>Previous Game Stats</Text>
+
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.previousGameStats}>Previous Game Stats</Text>
       {data.map((item, index) => {
