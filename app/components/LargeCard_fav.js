@@ -6,6 +6,7 @@ export default function LargeCard_fav({ navigation, title, data }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
+      <Text style={styles.previousGameStats}>Previous Game Stats</Text>
       {data.map((item, index) => {
         const isLastItem = index === data.length - 1;
         return (
@@ -43,4 +44,14 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
   },
+  previousGameStats: {
+    position: "absolute",
+    top: 15,
+    right: 12,
+    color: "white",
+    fontFamily: "sora-light",
+    fontSize: 12,
+  },
 });
+
+

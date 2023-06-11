@@ -6,6 +6,7 @@ export default function LargeCard({ navigation, title, data }) {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
+      <Text style={styles.previousGameStats}>Previous Game Stats</Text>
       {data.map((item) => {
         return (
           <StatCard item={item} navigation={navigation} key={item.name} />
@@ -28,5 +29,13 @@ const styles = StyleSheet.create({
     fontFamily: "sora-semibold",
     fontSize: 16,
     marginBottom: 16,
+  },
+  previousGameStats: {
+    position: "absolute",
+    top: 15,
+    right: 12,
+    color: "white",
+    fontFamily: "sora-light",
+    fontSize: 12,
   },
 });
