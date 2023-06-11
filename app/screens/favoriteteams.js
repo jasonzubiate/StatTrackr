@@ -3,9 +3,8 @@ import { View, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { globalStyles } from "../styles/global";
 import LargeCard from "../components/LargeCard";
-import favoriteteamsStack from "../routes/favoriteteamsStack";
 
-export default function Favorites() {
+export default function favoriteteams() {
 	const navigation = useNavigation();
 	
 	// Dummy data for now
@@ -78,8 +77,8 @@ export default function Favorites() {
 		
 		<View style={globalStyles.container}>
   <Button
-    title="Teams"
-    onPress={() => navigation.navigate(favoriteteamsStack.Favorites)}
+    title="Players"
+    onPress={() => navigation.navigate("favorites")}
   />
   <LargeCard title={"Favorite Players"} data={dataPlayers} />
   <LargeCard title={"Suggested Players"} data={dataPlayers2} />
