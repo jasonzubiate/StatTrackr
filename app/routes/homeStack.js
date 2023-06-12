@@ -3,6 +3,8 @@ import Home from "../screens/home";
 import Overview from "../screens/overview";
 import TeamOverview from "../screens/teamoverview";
 import AdvancedStats from "../screens/advancedstats";
+import favoriteteams from "../screens/Favoriteteams";
+import Favorites from "../screens/favorites";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,16 @@ export default function HomeStack() {
         name="Overview"
         component={Overview}
         options={{ title: "Overview" }}
+      />
+      <Stack.Screen
+        name="favoriteteams"
+        component={favoriteteams}
+        options={{ title: "favoriteteams" }}
+      />
+      <Stack.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{ title: "Favorites" }}
       />
       <Stack.Screen
         name="AdvancedStats"
