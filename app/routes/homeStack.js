@@ -34,12 +34,14 @@ export default function HomeStack() {
         component={Favorites}
         options={{ title: "Favorites" }}
       />
+
       <Stack.Screen
         name="AdvancedStats"
         component={AdvancedStats}
         options={{ title: "AdvancedStats" }}
       />
     
+
     </Stack.Navigator>
   );
 }

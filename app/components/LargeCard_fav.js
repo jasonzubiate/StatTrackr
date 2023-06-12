@@ -1,18 +1,26 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import StatCard from "./StatCard";
 
-export default function LargeCard({ navigation, title, data, additionalText }) {
+export default function LargeCard_fav({ navigation, title, data }) {
   return (
     <View style={styles.card}>
-      <Text style={styles.additionalText}>{additionalText}</Text>
+              <Text style={styles.previousGameStats}>Previous Game Stats</Text>
+
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.previousGameStats}>Previous Game Stats</Text>
-      {data.map((item) => {
+      {data.map((item, index) => {
+        const isLastItem = index === data.length - 1;
         return (
-          <StatCard item={item} navigation={navigation} key={item.name} />
+          <View style={{ marginBottom: isLastItem ? 20 : 0 }} key={item.name}>
+            <StatCard item={item} navigation={navigation} />
+          </View>
         );
       })}
+      <Image
+        source={require("../assets/img/add.png")}
+        style={styles.image}
+      />
     </View>
   );
 }
@@ -31,13 +39,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 16,
   },
-  additionalText: {
+  image: {
     position: "absolute",
-    top: 12,
-    right: 12,
-    color: "white",
-    fontFamily: "sora-semibold",
-    fontSize: 12,
+    bottom: 10,
+    right: 13,
+    width: 35,
+    height: 35,
   },
   previousGameStats: {
     position: "absolute",
@@ -48,3 +55,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+
