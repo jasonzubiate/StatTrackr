@@ -2,6 +2,7 @@ import { View } from "react-native";
 import { globalStyles } from "../styles/global";
 import LargeCard from "../components/LargeCard";
 import StatCard from "../components/StatCard";
+import LargeCard_Home_team from "../components/LargeCard_Home_team";
 
 
 export default function Home({ navigation }) {
@@ -74,7 +75,7 @@ export default function Home({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <LargeCard title={"Top Movers"} data={dataPlayers} navigation={navigation} />
-      <LargeCard title={"Top Movers"} data={dataTeams} navigation={navigation} />
+      <LargeCard_Home_team title={"Top Movers"} data={dataTeams} navigation={navigation} />
     </View>
   );
 }

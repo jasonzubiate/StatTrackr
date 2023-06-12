@@ -24,6 +24,15 @@ export default function HomeStack() {
         component={Overview}
         options={{ title: "Overview" }}
       />
+
+<Stack.Screen
+      // this is changed to TeamOverview just for the team navigation. orginal "Overview"
+      // changed again to AdvancedStats to work on the page
+        name="TeamOverview"
+        component={TeamOverview}
+        options={{ title: "TeamOverview" }}
+      />
+
       <Stack.Screen
         name="favoriteteams"
         component={Favoriteteams}
