@@ -30,7 +30,7 @@ export default function App() {
     <NavigationContainer>
       <NavigationBar />
       {/* this causes an error when uncommented */}
-      {/* <OverviewStack/> */}
+      
     </NavigationContainer>
   );
 }

@@ -16,7 +16,7 @@ export default function OverviewStack() {
       <Stack.Screen
         name="AdvancedStats"
         component={AdvancedStats}
-        options={{ title: "Advanced Stats" }}
+        options={{ title: "AdvancedStats" }}
       />
     </Stack.Navigator>
   );

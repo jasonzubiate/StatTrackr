@@ -1,8 +1,5 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { globalStyles } from "../styles/global";
-import StatCard from "../components/StatCard";
-import LargeCard from "../components/LargeCard";
-import Header from "../components/Header";
 import Season from "../components/Seasoncard";
 import OverviewStats from "../components/OverviewStatsCard";
 import PreviousGame from "../components/PreviousCard";
@@ -10,7 +7,7 @@ import RecentGames from "../components/RecentGamesCard";
 import PlayerCard from "../components/PlayerCard";
 import OverviewBar from "../components/OverviewBar";
 
-export default function Overview({ route, navigation }) {
+export default function TeamOverview({ route, navigation }) {
 	const { name, playerClass, stats } = route.params;
 
 	const item = {
@@ -20,32 +17,28 @@ export default function Overview({ route, navigation }) {
 		  { "Stat 3": 30 },
 		],
 	  };
-
-	  const scores1 = [
-		{ label: "PPG", value: "28.9" },
-		{ label: "APG", value: "6.8" },
-		{ label: "RPG", value: "8.3" },
-		{ label: "SPG", value: "0.9" },
-		{ label: "BPG", value: "0.6" },
-		{ label: "FG%", value: "50" },
+    
+      const scores1 = [
+		{ label: "PPG", value: "117.2" },
+		{ label: "APG", value: "25.3" },
+		{ label: "RPG", value: "45.1" },
+		{ label: "SPG", value: "6.9" },
+		{ label: "BPG", value: "6.5" },
+		{ label: "FG%", value: "47.2" },
 	  ];
 
-	  const scores2 = [
-		{ label: "PTS", value: "41" },
-		{ label: "AST", value: "8" },
-		{ label: "REB", value: "9" },
-		{ label: "STL", value: "0" },
+      const scores2 = [
+		{ label: "PTS", value: "121" },
+		{ label: "AST", value: "30" },
+		{ label: "REB", value: "47" },
+		{ label: "STL", value: "4" },
 		{ label: "BLK", value: "0" },
-		{ label: "FG%", value: "50" },
+		{ label: "FG%", value: "44.8" },
 	  ];
 
 	return (
 		<ScrollView style={globalStyles.container}>
-			{/* <Text style={globalStyles.p}>Player Overview</Text>
-			<Text style={globalStyles.p}>{name}</Text>
-			<Text style={globalStyles.p}>{playerClass}</Text>
-			<Text style={globalStyles.p}>{JSON.stringify(stats)}</Text> */}
-			<PlayerCard imageSource={require("../assets/img/lebronOverview.png")}/>
+			<PlayerCard imageSource={require('../assets/img/lakersTeam.png')}/>
 			<OverviewBar navigation={navigation}/>
 			<Season scores={scores1} style={globalStyles.p}/>
 			<OverviewStats style={globalStyles.p}/>
@@ -54,5 +47,3 @@ export default function Overview({ route, navigation }) {
 		</ScrollView>
 	);
 }
-
-
