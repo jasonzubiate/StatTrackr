@@ -5,6 +5,7 @@ import StatCard from "../components/StatCard";
 
 
 export default function Home({ navigation }) {
+  console.log(navigation)
   const dataPlayers = [
     {
       class: "player",

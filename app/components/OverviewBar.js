@@ -1,13 +1,17 @@
 import { StyleSheet, Text, View, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-export default function OverviewBar() {
-
+export default function OverviewBar({navigation}) {
+    
 
     return(
         <View style={styles.heading}>
             <Text style={styles.title}>Overview</Text>
             <Text style={styles.title}>GameLog</Text>
-            <Text style={styles.title}>Advanced Stats</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("AdvancedStats")}>
+                <Text style={styles.title}>Advanced Stats</Text>
+            </TouchableOpacity>
+            
         </View>
     )
 }

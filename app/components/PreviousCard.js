@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default function PreviousGame() {
+export default function PreviousGame({scores}) {
     return (
         <View>
             <View style={styles.heading}>
@@ -41,30 +41,15 @@ export default function PreviousGame() {
             </View>
                 {/* this is for the scores at the bottom */}
                 <View style={styles.scores}>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>PTS</Text>
-                        <Text style={styles.score}>41</Text>
-                    </View>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>AST</Text>
-                        <Text style={styles.score}>8</Text>
-                    </View>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>REB</Text>
-                        <Text style={styles.score}>9</Text>
-                    </View>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>STL</Text>
-                        <Text style={styles.score}>0</Text>
-                    </View>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>BLK</Text>
-                        <Text style={styles.score}>0</Text>
-                    </View>
-                    <View style={styles.scoreItem}>
-                        <Text style={styles.abbreviation}>FG%</Text>
-                        <Text style={styles.score}>50</Text>
-                    </View>
+                {scores.map((score, index) => {
+                    return (
+                        <View style={styles.scoreItem} key={index}>
+                            <Text style={styles.abbreviation}>{score.label}</Text>
+                            <Text style={styles.score}>{score.value}</Text>
+
+                        </View>
+                    )
+                })}
                 </View>
 
         </View>

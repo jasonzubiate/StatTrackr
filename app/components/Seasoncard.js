@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Season() {
+export default function Season( {scores} ) {
     return (
         <View>
             <View style={styles.heading}>
@@ -9,7 +9,16 @@ export default function Season() {
             </View>
         
             <View style={styles.scores}>
-                <View style={styles.scoreItem}>
+                {scores.map((score, index) => {
+                    return (
+                        <View style={styles.scoreItem} key={index}>
+                            <Text style={styles.abbreviation}>{score.label}</Text>
+                            <Text style={styles.score}>{score.value}</Text>
+
+                        </View>
+                    )
+                })}
+                {/* <View style={styles.scoreItem}>
                     <Text style={styles.abbreviation}>PPG</Text>
                     <Text style={styles.score}>28.9</Text>
                 </View>
@@ -32,7 +41,7 @@ export default function Season() {
                 <View style={styles.scoreItem}>
                     <Text style={styles.abbreviation}>FG%</Text>
                     <Text style={styles.score}>50</Text>
-                </View>
+                </View> */}
             </View>
 
         </View>

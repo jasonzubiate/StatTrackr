@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default function PlayerCard({imageSource}) {
+export default function Heatmap({imageSource}) {
     return (
-        <View>
+        <View style={styles.container}>
             <Image
                 source={imageSource}
                 style={styles.image}
@@ -12,8 +12,16 @@ export default function PlayerCard({imageSource}) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+
     image: {
-        width: 360,
+        width: 370,
+        height: 400,
         resizeMode: "contain",
+        justifyContent: "center",
     }
   });
