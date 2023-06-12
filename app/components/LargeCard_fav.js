@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import StatCard from "./StatCard";
+import StatCard_fav_teams from "./StatCard_fav_teams";
 
 export default function LargeCard_fav({ navigation, title, data }) {
   return (
@@ -13,7 +14,7 @@ export default function LargeCard_fav({ navigation, title, data }) {
         const isLastItem = index === data.length - 1;
         return (
           <View style={{ marginBottom: isLastItem ? 20 : 0 }} key={item.name}>
-            <StatCard item={item} navigation={navigation} />
+            <StatCard_fav_teams item={item} navigation={navigation} />
           </View>
         );
       })}

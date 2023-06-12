@@ -8,9 +8,12 @@ import LargeCard_fav from "../components/LargeCard_fav";
 import LargeCard_fav2 from "../components/LargeCard_fav2";
 import favoriteteamsStack from "../routes/favoriteteamsStack";
 import Favoriteteams from "./favoriteteams";
+import Overview from "./overview";
+import FavoritesStack from "../routes/favoritesStack";
 
-export default function Favorites() {
+export default function Favorites(navigation2) {
 	const navigation = useNavigation();
+	navigation2 = FavoritesStack()
 	
 	// Dummy data for now
 	const dataPlayers = [
@@ -93,8 +96,16 @@ export default function Favorites() {
 			</TouchableOpacity>
 			
 		  </View>
-		  <LargeCard_fav title={"Favorite Players"} data={dataPlayers} />
-		  <LargeCard_fav2 title={"Suggested Players"} data={dataPlayers2} />
+		  <TouchableOpacity
+			  onPress={() => {
+				navigation.navigate("Overview", Favoriteteams);
+			  }}
+			>
+			  <LargeCard_fav title={"Favorite Players"} data={dataPlayers} navigation = {navigation2}
+			  style={styles.box} />
+		  <LargeCard_fav2 title={"Suggested Players"} data={dataPlayers2} navigation = {navigation2} />
+			</TouchableOpacity>
+		  
 		</View>
 	  );
 	}
@@ -110,5 +121,13 @@ export default function Favorites() {
 	  logo: {
 		width: 400,
 		height: 30,
+	  },
+	  box: {
+		flexDirection: "row",
+		alignItems: "center",
+		paddingTop: 0,
+		paddingHorizontal: 0,
+		marginBottom: 0,
+		paddingBottom: 20,
 	  },
 	});

@@ -13,9 +13,15 @@ export default function favoriteteamsStack() {
       }}
     >
       <Stack.Screen
-        name="FavoriteTeams"
+        name="Favorites"
         component={Favorites}
         options={{ title: "Favorites" }}
+      />
+
+<Stack.Screen
+        name="Overview"
+        component={Overview}
+        options={{ title: "Overview" }}
       />
     </Stack.Navigator>
   );
