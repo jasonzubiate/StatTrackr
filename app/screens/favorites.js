@@ -7,7 +7,7 @@ import LargeCard from "../components/LargeCard";
 import LargeCard_fav from "../components/LargeCard_fav";
 import LargeCard_fav2 from "../components/LargeCard_fav2";
 import favoriteteamsStack from "../routes/favoriteteamsStack";
-import favoriteteams from "./Favoriteteams";
+// import favoriteteams from "./Favoriteteams";
 
 export default function Favorites() {
 	const navigation = useNavigation();
