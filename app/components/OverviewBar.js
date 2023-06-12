@@ -6,7 +6,9 @@ export default function OverviewBar({navigation}) {
 
     return(
         <View style={styles.heading}>
-            <Text style={styles.title}>Overview</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Overview")}>
+                <Text style={styles.title}>Overview</Text>
+            </TouchableOpacity>
             <Text style={styles.title}>GameLog</Text>
             <TouchableOpacity onPress={() => navigation.navigate("AdvancedStats")}>
                 <Text style={styles.title}>Advanced Stats</Text>
@@ -37,5 +39,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         
     },
+    underline: {
+        textDecorationLine: "underline",
+    }
 
 })

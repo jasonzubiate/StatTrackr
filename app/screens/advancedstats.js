@@ -26,7 +26,7 @@ export default function AdvancedStats({navigation }) {
     return (
         <ScrollView style={globalStyles.container}> 
             <PlayerCard imageSource={require("../assets/img/lebronOverview.png")}/>
-            <OverviewBar/>
+            <OverviewBar navigation={navigation}/>
             <PreviousGame scores={scores1}/>
            <ODPstats imageSource={require('../assets/img/offenseimg.png')}/>
            <Chart imageSource={require('../assets/img/stats.png')}/>

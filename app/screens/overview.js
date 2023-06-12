@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView, useState } from "react-native";
 import { globalStyles } from "../styles/global";
 import StatCard from "../components/StatCard";
 import LargeCard from "../components/LargeCard";
@@ -12,7 +12,6 @@ import OverviewBar from "../components/OverviewBar";
 
 export default function Overview({ navigation }) {
 	
-
 	const item = {
 		stats: [
 		  { "Stat 1": 10 },
