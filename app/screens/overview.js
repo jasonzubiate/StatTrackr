@@ -10,8 +10,8 @@ import RecentGames from "../components/RecentGamesCard";
 import PlayerCard from "../components/PlayerCard";
 import OverviewBar from "../components/OverviewBar";
 
-export default function Overview({ route, navigation }) {
-	const { name, playerClass, stats } = route.params;
+export default function Overview({ navigation }) {
+	
 
 	const item = {
 		stats: [

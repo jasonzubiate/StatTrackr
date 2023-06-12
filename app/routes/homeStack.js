@@ -2,6 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import Overview from "../screens/overview";
 import TeamOverview from "../screens/teamoverview";
+import AdvancedStats from "../screens/advancedstats";
 
 const Stack = createStackNavigator();
 
@@ -16,10 +17,17 @@ export default function HomeStack() {
       <Stack.Screen name="Home" component={Home} options={{ title: "Home" }} />
       <Stack.Screen
       // this is changed to TeamOverview just for the team navigation. orginal "Overview"
-        name="TeamOverview"
-        component={TeamOverview}
+      // changed again to AdvancedStats to work on the page
+        name="Overview"
+        component={Overview}
         options={{ title: "Overview" }}
       />
+      <Stack.Screen
+        name="AdvancedStats"
+        component={AdvancedStats}
+        options={{ title: "AdvancedStats" }}
+      />
+    
     </Stack.Navigator>
   );
 }

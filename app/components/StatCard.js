@@ -12,7 +12,7 @@ export default function StatCard({ navigation, item}) {
     <TouchableOpacity
       onPress={() => {
         // Changed "Overview" in navigate to "TeamOverview to work with the teamoverview page"
-        navigation.navigate("TeamOverview", item);
+        navigation.navigate("Overview", item);
       }}
       style={styles.card}
     >

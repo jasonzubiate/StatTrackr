@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Favorites from "../screens/favorites";
 import Overview from "../screens/overview";
+import AdvancedStats from "../screens/advancedstats";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,12 @@ export default function FavoritesStack() {
         component={Overview}
         options={{ title: "Overview" }}
       />
+      <Stack.Screen
+        name="AdvancedStats"
+        component={AdvancedStats}
+        options={{ title: "AdvancedStats" }}
+      />
+    
     </Stack.Navigator>
   );
 }

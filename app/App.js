@@ -6,6 +6,8 @@ import NavigationBar from "./components/NavigationBar";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import OverviewStack from "./routes/overviewStack";
+import { createStackNavigator } from "@react-navigation/stack";
+const Stack = createStackNavigator();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +31,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <NavigationBar />
-      {/* this causes an error when uncommented */}
       
     </NavigationContainer>
   );
