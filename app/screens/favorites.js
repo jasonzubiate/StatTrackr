@@ -7,7 +7,7 @@ import LargeCard from "../components/LargeCard";
 import LargeCard_fav from "../components/LargeCard_fav";
 import LargeCard_fav2 from "../components/LargeCard_fav2";
 import favoriteteamsStack from "../routes/favoriteteamsStack";
-// import favoriteteams from "./Favoriteteams";
+import Favoriteteams from "./favoriteteams";
 
 export default function Favorites() {
 	const navigation = useNavigation();
@@ -83,7 +83,7 @@ export default function Favorites() {
 		  <View style={styles.header}>
 			<TouchableOpacity
 			  onPress={() => {
-				navigation.navigate("favoriteteams", favoriteteams);
+				navigation.navigate("favoriteteams", Favoriteteams);
 			  }}
 			>
 			  <Image
